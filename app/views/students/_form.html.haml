@@ -1,0 +1,14 @@
+= simple_form_for(@student) do |f|
+  .row
+    .col-md-5
+      .form-group
+        = f.input :name, input_html: {disabled: readonly, class:"form-control"}
+    .col-md-5
+      .form-group
+        = f.input :register_number, input_html: {disabled: readonly, class:"form-control"}
+    .col-md-2
+      .form-group
+        = f.input :status, collection: StudentStatus.to_a, input_html: {disabled: readonly, class:"form-control"}
+  - unless readonly
+    %br
+    = f.submit t('labels.save'), class: 'btn btn-primary'

@@ -1,0 +1,19 @@
+%h3= "#{t('labels.list')} #{t('activerecord.models.courses')}"
+%p
+  = link_to t('labels.new'), new_course_path, class:"btn btn-primary"
+
+%table.table.table-striped
+  %tr
+    %th= t('activerecord.attributes.course.name')
+    %th= t('activerecord.attributes.course.description')
+    %th= t('activerecord.attributes.course.status')
+    %th
+  - @courses.each do |course|
+    %tr
+      %td= course.name
+      %td= course.description
+      %td= course.status_humanize
+      %td
+        = link_to t('labels.show'), course
+        = link_to t('labels.edit'), edit_course_path(course)
+        = link_to t('labels.destroy'), course, method: :delete, data: { confirm: "Deseja excluir esse aluno?" }

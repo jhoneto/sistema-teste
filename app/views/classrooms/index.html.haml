@@ -1,0 +1,17 @@
+%h3= "#{t('labels.list')} #{t('activerecord.models.classrooms')}"
+%p
+  = link_to t('labels.new'), new_classroom_path, class:"btn btn-primary"
+
+%table.table.table-striped
+  %tr
+    %th= t('activerecord.attributes.classroom.student_id')
+    %th= t('activerecord.attributes.classroom.course_id')
+    %th= t('activerecord.attributes.classroom.entry_at')
+    %th
+  - @classrooms.each do |classroom|
+    %tr
+      %td= classroom.student.name
+      %td= classroom.course.name
+      %td= classroom.entry_at.strftime('%d/%m/%Y %H:%M')
+      %td
+        = link_to t('labels.show'), classroom

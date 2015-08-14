@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    student_status:
+      active: "Ativo"
+      inactive: "Inativo"
+    course_status:
+      active: "Ativo"
+      inactive: "Inativo"

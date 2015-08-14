@@ -1,0 +1,5 @@
+%h3= "#{t('labels.show')} #{t('activerecord.models.student')}"
+%p
+  = link_to 'Voltar', students_path, class:"btn btn-info"
+%p
+  = render 'form', readonly: true

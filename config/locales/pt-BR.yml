@@ -1,0 +1,30 @@
+"pt-BR":
+  labels:
+    home: 'Início'
+    list: 'Lista de'
+    new: 'Novo'
+    edit: 'Editar'
+    show: 'Visualizar'
+    destroy: 'Excluir'
+    save: 'Salvar'
+  activerecord:
+    models:
+      student: 'Aluno'
+      students: 'Alunos'
+      course: 'Curso'
+      courses: 'Cursos'
+      classroom: 'Matrícula'
+      classrooms: 'Matrículas'
+    attributes:
+      student:
+        name: 'Nome'
+        register_number: 'Matrícula'
+        status: 'Status'
+      course:
+        name: 'Nome'
+        description: 'Descrição'
+        status: 'Status'
+      classroom:
+        student_id: 'Aluno'
+        course_id: 'Curso'
+        entry_at: 'Matrícula em'
