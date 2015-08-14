@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :courses
-  resources :students
+  resources :students do
+    collection do
+      get :autocomplete_student_name
+    end
+  end
   resources :classrooms
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      redirect_to @course
+      redirect_to(@course, flash:{ notice: t('messages.save', model_name: t('activerecord.models.course'))  })
     else
       render 'new'
     end
@@ -27,15 +27,18 @@ class CoursesController < ApplicationController
   def update
     @course.assign_attributes(course_params)
     if @course.save
-      redirect_to(@course)
+      redirect_to(@course, flash:{ notice: t('messages.save', model_name: t('activerecord.models.course'))  } )
     else
       render "edit"
     end
   end
 
   def destroy
-    @course.destroy
-    redirect_to courses_url
+    if @course.destroy
+      redirect_to(courses_url, flash:{ notice: t('messages.destroy', model_name: t('activerecord.models.course')) })
+    else
+      redirect_to(courses_url, flash:{ notice: t('messages.not_destroy', model_name: t('activerecord.models.course')) })
+    end
   end
 
   private

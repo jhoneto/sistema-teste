@@ -10,7 +10,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'therubyracer', '~> 0.12', platforms: :ruby
+gem 'therubyracer', '0.12', platforms: :ruby
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails', '5.0.3'
+
 
 gem 'rails-assets-normalize-scss', '~> 3.0.1'
 gem 'rails-assets-stylish-scss', '~> 0.0.5'

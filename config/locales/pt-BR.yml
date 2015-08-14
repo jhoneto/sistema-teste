@@ -1,4 +1,8 @@
 "pt-BR":
+  messages:
+    save: "%{model_name} salvo com sucesso"
+    destroy: "%{model_name} removido com sucesso"
+    not_destroy: "%{model_name} não pode ser removido"
   labels:
     home: 'Início'
     list: 'Lista de'
@@ -26,5 +30,6 @@
         status: 'Status'
       classroom:
         student_id: 'Aluno'
+        student_name: 'Aluno'
         course_id: 'Curso'
         entry_at: 'Matrícula em'

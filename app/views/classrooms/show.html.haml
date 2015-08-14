@@ -1,0 +1,8 @@
+%h3= "#{t('labels.show')} #{t('activerecord.models.classroom')}"
+%p
+  = link_to 'Voltar', classrooms_path, class:"btn btn-info"
+%p
+  %label=t('activerecord.attributes.classroom.course_id')
+  %p=@classroom.course.name
+  %label=t('activerecord.attributes.classroom.student_id')
+  %p=@classroom.student.name

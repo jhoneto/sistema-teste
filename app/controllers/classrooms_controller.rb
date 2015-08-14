@@ -18,7 +18,7 @@ class ClassroomsController < ApplicationController
   def create
     @classroom = Classroom.new(classroom_params)
     if @classroom.save
-      redirect_to @classroom
+      redirect_to(@classroom, flash:{ notice: t('messages.save', model_name: t('activerecord.models.classroom'))  } )
     else
       render 'new'
     end
@@ -41,7 +41,7 @@ class ClassroomsController < ApplicationController
   private
 
     def classroom_params
-      params.require(:classroom).permit(:name, :register_number, :status)
+      params.require(:classroom).permit(:course_id, :student_id)
     end
 
     def set_classroom

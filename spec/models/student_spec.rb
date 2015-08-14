@@ -24,5 +24,16 @@ RSpec.describe Student, :type => :model do
     expect(student.errors[:register_number].size).to eq(1)
   end
 
+  it 'invalid remove if exists classroom' do
+    student = FactoryGirl.create(:student)
+    classroom = FactoryGirl.create(:classroom, student_id: student.id)
+    expect(student.destroy).to be_falsey
+  end
+
+  it 'valid remove if no exists classroom' do
+    student = FactoryGirl.create(:student)
+    expect(student.destroy).to be_truthy
+  end
+
 
 end

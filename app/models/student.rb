@@ -5,4 +5,6 @@ class Student < ActiveRecord::Base
 
   has_enumeration_for :status, with: StudentStatus
 
+  has_many :classrooms, dependent: :restrict_with_error
+
 end
